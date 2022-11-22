@@ -7,13 +7,13 @@ export type TCardData = {
   component: React.ReactNode;
 };
 
-const shuffleArray = (a: TCardData[]): TCardData[] => {
-  for (let i = a.length - 1; i > 0; i--) {
+const shuffleArray = (cardArray: TCardData[]): TCardData[] => {
+  for (let i = cardArray.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
+    [cardArray[i], cardArray[j]] = [cardArray[j], cardArray[i]];
   }
 
-  return a;
+  return cardArray;
 };
 
 export const getShuffledCards = (): TCardData[] => {
